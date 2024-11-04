@@ -2,16 +2,12 @@
     <div class="flex justify-center items-center flex-col gap-4">
         <CardTitle title="Quiz" @onClick="router.get(route('welcome'))" />
         <QuizItem
-            title="Kesehatan ibu hamil"
+            v-for="quiz in props.quizes"
+            :key="quiz.id"
+            :title="quiz.title"
             :score="90"
             :is-complete="true"
-            @onClick="router.get(route('quiz.work', 'sadfasf'))"
-        />
-        <QuizItem
-            title="Menjaga kandungan"
-            :score="0"
-            :is-complete="false"
-            @onClick="router.get(route('quiz.work', 'sadfasf'))"
+            @onClick="router.get(route('quiz.work', quiz.id))"
         />
     </div>
 </template>
@@ -24,6 +20,10 @@ import CardTitle from "@/composable/CardTitle.vue";
 
 defineOptions({
     layout: WelcomeLayout,
+});
+
+const props = defineProps({
+    quizes: { type: Array },
 });
 </script>
 

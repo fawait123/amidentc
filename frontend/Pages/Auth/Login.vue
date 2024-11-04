@@ -6,10 +6,15 @@
         >
             <div class="grid grid-cols-1 gap-2">
                 <Label for="nama" class="text-white">Nama</Label>
-                <Input placeholder="Masukan nama anda" id="nama" />
+                <Input
+                    placeholder="Masukan nama anda"
+                    id="nama"
+                    v-model="form.name"
+                />
+                <span class="text-sm text-red-500">{{ form.errors.name }}</span>
             </div>
             <Button
-                @click="router.get(route('welcome'))"
+                @click="handleLogin"
                 variant="outline"
                 class="w-full text-primary hover:text-primary"
             >
@@ -27,11 +32,23 @@ import { Label } from "@/components/ui/label";
 import { ScanFace } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
 import LogoComponent from "@/composable/LogoComponent.vue";
-import { router } from "@inertiajs/vue3";
+import { router, useForm } from "@inertiajs/vue3";
+
+const form = useForm({
+    name: null,
+});
 
 defineOptions({
     layout: AuthLayout,
 });
+
+const handleLogin = () => {
+    form.post(route("login.post"), {
+        onSuccess: () => {
+            router.get(route("welcome"));
+        },
+    });
+};
 </script>
 
 <style lang="scss" scoped></style>

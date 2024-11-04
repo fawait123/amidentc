@@ -2,16 +2,10 @@
     <div class="flex justify-center items-center flex-col gap-4">
         <CardTitle title="Edukasi" @onClick="router.get(route('welcome'))" />
         <EducationItem
-            title="Menjaga kehamilan yang baik"
-            @onClick="router.get(route('education.show', '23424fsdf'))"
-        />
-        <EducationItem
-            title="Makanan yang baik buat ibu hamil"
-            @onClick="router.get(route('education.show', '23424fsdf'))"
-        />
-        <EducationItem
-            title="Begini kalau kita tidak menjaga kehamilan"
-            @onClick="router.get(route('education.show', '23424fsdf'))"
+            v-for="education in props.educations"
+            :key="education.id"
+            :title="education.title"
+            @onClick="router.get(route('education.show', education.id))"
         />
     </div>
 </template>
@@ -24,6 +18,10 @@ import EducationItem from "./Partials/EducationItem.vue";
 
 defineOptions({
     layout: WelcomeLayout,
+});
+
+const props = defineProps({
+    educations: { type: Array },
 });
 </script>
 

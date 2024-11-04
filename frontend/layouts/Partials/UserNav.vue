@@ -11,6 +11,19 @@ import {
     DropdownMenuShortcut,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { usePage, useForm, router } from "@inertiajs/vue3";
+
+const page = usePage();
+
+const form = useForm({});
+
+const onLogout = () => {
+    form.post(route("logout"), {
+        onSuccess: () => {
+            router.get(route("login"));
+        },
+    });
+};
 </script>
 
 <template>
@@ -18,7 +31,7 @@ import {
         <DropdownMenuTrigger as-child>
             <Button variant="ghost" class="relative h-8 w-8 rounded-full">
                 <Avatar class="h-9 w-9">
-                    <AvatarImage src="/avatars/03.png" alt="@shadcn" />
+                    <AvatarImage src="/icon.png" alt="@shadcn" />
                     <AvatarFallback>SC</AvatarFallback>
                 </Avatar>
             </Button>
@@ -26,30 +39,16 @@ import {
         <DropdownMenuContent class="w-56" align="end">
             <DropdownMenuLabel class="font-normal flex">
                 <div class="flex flex-col space-y-1">
-                    <p class="text-sm font-medium leading-none">shadcn</p>
-                    <p class="text-xs leading-none text-muted-foreground">
-                        m@example.com
+                    <p class="text-sm font-medium leading-none">
+                        {{ page.props.auth.participant.name }}
+                    </p>
+                    <p class="text-xs leading-none text-primary">
+                        {{ "online" }}
                     </p>
                 </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-                <DropdownMenuItem>
-                    Profile
-                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                    Billing
-                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                    Settings
-                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>New Team</DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem @click="onLogout">
                 Log out
                 <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
             </DropdownMenuItem>
