@@ -22,6 +22,7 @@ export default defineConfig({
     resolve: {
         alias: {
             "@": fileURLToPath(new URL("./frontend", import.meta.url)),
+            "ziggy-vue": "/vendor/tightenco/ziggy/src/js",
         },
     },
 });
