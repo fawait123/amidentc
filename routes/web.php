@@ -1,23 +1,22 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EducationController;
-use App\Http\Controllers\QuizController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
-Route::group(['middleware' => 'guard.participant'], function () {
-    Route::get('/login', [AuthController::class, 'index'])->name('login');
-    Route::post('/login', [AuthController::class, 'post'])->name('login.post');
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::group(['middleware' => 'auth.participant'], function () {
-    Route::get('/', fn () => Inertia::render('Welcome/Welcome'))->name('welcome');
-    Route::get('/chattbot', fn () => Inertia::render('Chattbot/Chattbot'))->name('chattbot');
-    Route::get('/quiz', [QuizController::class, 'index'])->name('quiz');
-    Route::get('/quiz/{quiz}', [QuizController::class, 'show'])->name('quiz.work');
-    Route::post('/quiz', [QuizController::class, 'post'])->name('quiz.post');
-    Route::get('/education', [EducationController::class, 'index'])->name('education');
-    Route::get('/education/{education}', [EducationController::class, 'show'])->name('education.show');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__ . '/auth.php';
+require __DIR__ . '/crud.php';
+// require __DIR__ . '/frontend.php';
