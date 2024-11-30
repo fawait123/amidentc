@@ -37,11 +37,15 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('participant')->logout();
+        try {
+            Auth::guard('participant')->logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
 
-        return redirect()->back();
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            dd($th);
+        }
     }
 }

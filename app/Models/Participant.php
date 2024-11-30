@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * Class Participant
@@ -15,9 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Participant extends Model
+class Participant extends Authenticatable
 {
-    
+
     protected $perPage = 20;
 
     /**
@@ -26,6 +26,4 @@ class Participant extends Model
      * @var array<int, string>
      */
     protected $fillable = ['name'];
-
-
 }

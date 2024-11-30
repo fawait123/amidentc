@@ -18,9 +18,9 @@ const page = usePage();
 const form = useForm({});
 
 const onLogout = () => {
-    form.post(route("logout"), {
+    form.post(route("frontend.logout"), {
         onSuccess: () => {
-            router.get(route("login"));
+            router.get(route("frontend.login"));
         },
     });
 };

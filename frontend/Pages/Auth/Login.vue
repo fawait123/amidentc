@@ -1,23 +1,13 @@
 <template>
     <div class="flex flex-col items-center justify-center">
         <LogoComponent />
-        <div
-            class="w-full md:max-w-[30%] md:min-w-[30%] grid grid-cols-1 gap-4"
-        >
+        <div class="w-full md:max-w-[30%] md:min-w-[30%] grid grid-cols-1 gap-4">
             <div class="grid grid-cols-1 gap-2">
                 <Label for="nama" class="text-white">Nama</Label>
-                <Input
-                    placeholder="Masukan nama anda"
-                    id="nama"
-                    v-model="form.name"
-                />
+                <Input placeholder="Masukan nama anda" id="nama" v-model="form.name" />
                 <span class="text-sm text-red-500">{{ form.errors.name }}</span>
             </div>
-            <Button
-                @click="handleLogin"
-                variant="outline"
-                class="w-full text-primary hover:text-primary"
-            >
+            <Button @click="handleLogin" variant="outline" class="w-full text-primary hover:text-primary">
                 MASUK
                 <ScanFace />
             </Button>
@@ -43,7 +33,7 @@ defineOptions({
 });
 
 const handleLogin = () => {
-    form.post(route("login.post"), {
+    form.post(route("frontend.login.post"), {
         onSuccess: () => {
             router.get(route("welcome"));
         },

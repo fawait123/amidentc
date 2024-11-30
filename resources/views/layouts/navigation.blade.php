@@ -16,13 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('participants.index')" :active="request()->routeIs('participants.*')">
-                        {{ __('Participants') }}
+                        {{ __('Partisipan') }}
                     </x-nav-link>
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
-                        {{ __('Users') }}
+                        {{ __('Pengguna') }}
                     </x-nav-link>
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
-                        {{ __('Posts') }}
+                        {{ __('Edukasi') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('quizzes.index')" :active="request()->routeIs('quizzes.*')">
+                        {{ __('Kuis') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('questions.index')" :active="request()->routeIs('questions.*')">
+                        {{ __('Pertanyaan') }}
                     </x-nav-link>
                 </div>
             </div>

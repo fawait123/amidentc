@@ -19,6 +19,6 @@ class ParticipantAuthMiddleware
             return $next($request);
         }
 
-        return redirect()->route('login');
+        return redirect()->route('frontend.login');
     }
 }
