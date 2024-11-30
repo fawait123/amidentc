@@ -6,15 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Models\AnswerQuestion;
 use App\Models\Question;
 use App\Models\Quiz;
+use App\Services\QuizService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class QuizController extends Controller
 {
+    public function __construct(
+        public QuizService $quizService
+    ) {}
     public function index()
     {
         return Inertia::render('Quiz/Quiz', [
-            'quizes' => Quiz::latest()->get(),
+            'quizes' => fn() => $this->quizService->getQuizAnswer(),
         ]);
     }
 
@@ -34,16 +39,16 @@ class QuizController extends Controller
 
         AnswerQuestion::updateOrCreate(
             [
-                'answer_id' => $request->answer_id,
                 'quiz_id' => $request->quiz_id,
                 'question_id' => $request->question_id,
-                'user_id' => 1,
+                'user_id' => Auth::guard('participant')->user()->id ?? 0,
             ],
             [
                 'answer_id' => $request->answer_id,
                 'quiz_id' => $request->quiz_id,
                 'question_id' => $request->question_id,
-                'user_id' => 1,
+                'user_id' => Auth::guard('participant')->user()->id ?? 0,
+                'is_correct' => $this->quizService->correctAnswer(answer_id: $request->answer_id, question_id: $request->question_id),
             ]
         );
 

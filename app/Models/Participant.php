@@ -26,4 +26,9 @@ class Participant extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = ['name'];
+
+    public function answers()
+    {
+        return $this->hasMany(AnswerQuestion::class, 'user_id');
+    }
 }

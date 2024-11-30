@@ -1,14 +1,9 @@
 <template>
     <div class="flex justify-center items-center flex-col gap-4">
         <CardTitle title="Quiz" @onClick="router.get(route('welcome'))" />
-        <QuizItem
-            v-for="quiz in props.quizes"
-            :key="quiz.id"
-            :title="quiz.title"
-            :score="90"
-            :is-complete="true"
-            @onClick="router.get(route('quiz.work', quiz.id))"
-        />
+        <QuizItem v-for="quiz in props.quizes" :key="quiz.id" :title="quiz.title"
+            :score="(quiz.total / quiz.total_question * 100).toFixed(2)" :is-complete="quiz.total_submit > 0"
+            @onClick="router.get(route('quiz.work', quiz.id))" />
     </div>
 </template>
 

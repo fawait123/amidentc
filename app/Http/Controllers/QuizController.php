@@ -6,6 +6,9 @@ use App\Models\Quiz;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\QuizRequest;
+use App\Models\AnswerQuestion;
+use App\Models\Participant;
+use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -16,7 +19,7 @@ class QuizController extends Controller
      */
     public function index(Request $request): View
     {
-        $quizzes = Quiz::paginate();
+        $quizzes = Quiz::select('quizzes.*')->selectRaw('(select count(DISTINCT CONCAT(quiz_id,user_id)) from answer_questions where quiz_id = quizzes.id) as total_participant')->paginate();
 
         return view('quiz.index', compact('quizzes'))
             ->with('i', ($request->input('page', 1) - 1) * $quizzes->perPage());
@@ -50,7 +53,12 @@ class QuizController extends Controller
     {
         $quiz = Quiz::find($id);
 
-        return view('quiz.show', compact('quiz'));
+        $participants = Participant::select('participants.*')
+            ->selectRaw("(select count(id) from answer_questions where user_id = participants.id and quiz_id = $id and is_correct = 1) total")
+            ->whereIn('id', AnswerQuestion::where('quiz_id', $id)->pluck('user_id')->toArray())
+            ->get();
+
+        return view('quiz.show', compact('quiz', 'participants'));
     }
 
     /**
