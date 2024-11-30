@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Posts') }}
+            {{ __('Edukasi') }}
         </h2>
     </x-slot>
 
@@ -11,13 +11,12 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Posts') }}</h1>
-                            <p class="mt-2 text-sm text-gray-700">A list of all the {{ __('Posts') }}.</p>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Edukasi') }}</h1>
+                            <p class="mt-2 text-sm text-gray-700">Daftar semua data {{ __('Edukasi') }}.</p>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('posts.create') }}"
-                                class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add
-                                new</a>
+                                class="block rounded-md bg-slate-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600">Tambah</a>
                         </div>
                     </div>
 
@@ -33,10 +32,10 @@
 
                                             <th scope="col"
                                                 class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                                Title</th>
+                                                Judul</th>
                                             <th scope="col"
                                                 class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                                Created By</th>
+                                                Dibuat oleh</th>
 
                                             <th scope="col"
                                                 class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
@@ -60,14 +59,14 @@
                                                     <form action="{{ route('posts.destroy', $post->id) }}"
                                                         method="POST">
                                                         <a href="{{ route('posts.show', $post->id) }}"
-                                                            class="text-gray-600 font-bold hover:text-gray-900 mr-2">{{ __('Show') }}</a>
+                                                            class="text-gray-600 font-bold hover:text-gray-900 mr-2">{{ __('Detail') }}</a>
                                                         <a href="{{ route('posts.edit', $post->id) }}"
-                                                            class="text-indigo-600 font-bold hover:text-indigo-900  mr-2">{{ __('Edit') }}</a>
+                                                            class="text-slate-600 font-bold hover:text-slate-900  mr-2">{{ __('Ubah') }}</a>
                                                         @csrf
                                                         @method('DELETE')
                                                         <a href="{{ route('posts.destroy', $post->id) }}"
                                                             class="text-red-600 font-bold hover:text-red-900"
-                                                            onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">{{ __('Delete') }}</a>
+                                                            onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">{{ __('Hapus') }}</a>
                                                     </form>
                                                 </td>
                                             </tr>

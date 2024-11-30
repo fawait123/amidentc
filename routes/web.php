@@ -1,10 +1,21 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Participant;
+use App\Models\Post;
+use App\Models\Quiz;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $data = [
+        'total_user' => User::count(),
+        'total_quiz' => Quiz::count(),
+        'total_participant' => Participant::count(),
+        'total_education' => Post::count(),
+    ];
+
+    return view('dashboard', $data);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
