@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbsenceController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuestionController;
@@ -13,4 +14,5 @@ Route::prefix('admin')->group(function () {
     Route::resource('posts', PostController::class);
     Route::resource('quizzes', QuizController::class);
     Route::resource('questions', QuestionController::class);
+    Route::get('absence', [AbsenceController::class, 'index'])->name('absence.index');
 });
