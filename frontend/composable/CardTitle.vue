@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-4">
+    <div class="w-full xl:min-w-[50%] xl:max-w-[50%] bg-white rounded-xl p-4">
         <div class="flex justify-between items-center">
             <h1 class="text-[24px] text-muted-foreground font-bold">
                 {{ props.title }}

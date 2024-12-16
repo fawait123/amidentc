@@ -23,15 +23,17 @@
                     <h1 class="text-[100px] font-bold text-slate-400">{{ $total_participant }}</h1>
                     <h6 class="font-bold text-[24px]">TOTAL PARTISIPAN</h6>
                 </div>
+                {{-- <div
+                    class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2 flex justify-center items-center gap-2 flex-col">
+                    <h1 class="text-[100px] font-bold text-slate-400">{{ $total_education }}</h1>
+                    <h6 class="font-bold text-[24px]">TOTAL EDUKASI</h6>
+                </div> --}}
+            </div>
+            <div class="my-10 grid grid-cols-1 gap-4">
                 <div
                     class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2 flex justify-center items-center gap-2 flex-col">
                     <h1 class="text-[100px] font-bold text-slate-400">{{ $total_quiz }}</h1>
                     <h6 class="font-bold text-[24px]">TOTAL KUIS</h6>
-                </div>
-                <div
-                    class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-2 flex justify-center items-center gap-2 flex-col">
-                    <h1 class="text-[100px] font-bold text-slate-400">{{ $total_education }}</h1>
-                    <h6 class="font-bold text-[24px]">TOTAL EDUKASI</h6>
                 </div>
             </div>
         </div>

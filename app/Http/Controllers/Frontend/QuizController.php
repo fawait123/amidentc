@@ -27,7 +27,11 @@ class QuizController extends Controller
     {
         return Inertia::render('Quiz/WorkQuiz', [
             'quiz' => $quiz,
-            'questions' => Question::with('answers')->paginate(1),
+            'questions' => Question::selectRaw("(select answer_id from answer_questions where quiz_id = $quiz->id and question_id = questions.id and user_id = " . Auth::guard('participant')->user()->id . " limit 1) answer_id")
+                ->selectRaw("questions.*")
+                ->where('quiz_id', $quiz->id)
+                ->with('answers')
+                ->paginate(1),
         ]);
     }
 

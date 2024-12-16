@@ -21,9 +21,9 @@
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
                         {{ __('Pengguna') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
+                    {{-- <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.*')">
                         {{ __('Edukasi') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                     <x-nav-link :href="route('quizzes.index')" :active="request()->routeIs('quizzes.*')">
                         {{ __('Kuis') }}
                     </x-nav-link>

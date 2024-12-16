@@ -37,8 +37,8 @@ const props = defineProps({
 });
 
 const form = useForm({
-    answer_id: null,
-    question_id: props.questions.data[0]?.id,
+    answer_id: props.questions && props.questions.data[0]?.answer_id,
+    question_id: props.questions && props.questions.data[0]?.id,
     quiz_id: props.quiz.id,
 });
 

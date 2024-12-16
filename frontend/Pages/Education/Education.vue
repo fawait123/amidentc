@@ -1,12 +1,10 @@
 <template>
     <div class="flex justify-center items-center flex-col gap-4">
-        <CardTitle title="Edukasi" @onClick="router.get(route('welcome'))" />
-        <EducationItem
-            v-for="education in props.educations"
-            :key="education.id"
-            :title="education.title"
-            @onClick="router.get(route('education.show', education.id))"
-        />
+        <CardTitle title="Amidentc (Aminah Dental Health Education)" @onClick="router.get(route('welcome'))" />
+        <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-4 cursor-pointer"
+            @click="gotoDetail(education.title)" v-for="education in educationData" :key="education.title">
+            <span class="font-bold text-[18px] text-muted-foreground uppercase">{{ education.title }}</span>
+        </div>
     </div>
 </template>
 
@@ -14,7 +12,7 @@
 import WelcomeLayout from "@/layouts/WelcomeLayout.vue";
 import CardTitle from "@/composable/CardTitle.vue";
 import { router } from "@inertiajs/vue3";
-import EducationItem from "./Partials/EducationItem.vue";
+import { educationData } from "@/constant/education";
 
 defineOptions({
     layout: WelcomeLayout,
@@ -23,6 +21,10 @@ defineOptions({
 const props = defineProps({
     educations: { type: Array },
 });
+
+const gotoDetail = (title) => {
+    router.get(route('education.show', { education: title.toLowerCase() })); // Replace with actual route
+}
 </script>
 
 <style lang="scss" scoped></style>

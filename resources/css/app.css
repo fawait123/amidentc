@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.quill-container .ql-toolbar,
+.quill-container .ql-container {
+  all: initial; /* Mengatur ulang semua gaya */
+  font-family: inherit;
+}

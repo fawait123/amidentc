@@ -19,7 +19,7 @@ class EducationController extends Controller
         ]);
     }
 
-    public function show(Post $education)
+    public function show(string $education)
     {
         return Inertia::render('Education/EducationDetail', [
             'education' => $education,
