@@ -1,10 +1,13 @@
 <script setup>
 import { Card, CardContent } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
+const props = defineProps({
+    isShow: { type: Boolean }
+})
 </script>
 
 <template>
-    <Carousel v-slot="{ canScrollNext, canScrollPrev }" class="relative w-full max-w-xs">
+    <Carousel v-slot="{ canScrollNext, canScrollPrev }" class="relative w-full max-w-xs" v-if="props.isShow">
         <CarouselContent>
             <CarouselItem v-for="(_, index) in 5" :key="index">
                 <Card>

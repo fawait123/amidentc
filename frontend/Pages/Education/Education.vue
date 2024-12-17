@@ -1,9 +1,11 @@
 <template>
     <div class="flex justify-center items-center flex-col gap-4">
         <CardTitle title="Amidentc (Aminah Dental Health Education)" @onClick="router.get(route('welcome'))" />
-        <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-4 cursor-pointer"
+        <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-4 cursor-pointer flex justify-between items-center"
             @click="gotoDetail(education.title)" v-for="education in educationData" :key="education.title">
-            <span class="font-bold text-[18px] text-muted-foreground uppercase">{{ education.title }}</span>
+            <span class="font-bold text-[12px] md:text-[18px] text-muted-foreground uppercase">{{ education.title
+                }}</span>
+            <component :is="education.icon" class="text-primary" />
         </div>
     </div>
 </template>

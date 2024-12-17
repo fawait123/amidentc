@@ -19,7 +19,6 @@
                             'option_1' => $item->answers[0]->answer_text ?? '',
                             'option_2' => $item->answers[1]->answer_text ?? '',
                             'option_3' => $item->answers[2]->answer_text ?? '',
-                            'option_4' => $item->answers[3]->answer_text ?? '',
                         ]" :selected="old('answer', selectedAnswer($item->answers))" />
 
                     <span
@@ -40,7 +39,6 @@
                         'option_1' => 'Option 1',
                         'option_2' => 'Option 2',
                         'option_3' => 'Option 3',
-                        'option_4' => 'Option 4',
                     ]" :selected="old('answer')" />
 
                 <span class="absolute top-0 right-0 text-sm text-blue-500 cursor-pointer font-bold"
@@ -63,6 +61,7 @@
             if (element.innerText === 'Tambah') {
                 // Clone element
                 const clone = currentElement.cloneNode(true);
+                clone.querySelector('input[type=text]').value = ''
                 container.appendChild(clone);
 
                 // clone radio

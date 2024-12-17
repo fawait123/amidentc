@@ -36,12 +36,11 @@
                                             <dt class="text-sm font-medium leading-6 text-gray-900">Question Text</dt>
                                             <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                                                 @foreach ($question->questions as $item)
-                                                    <span class="font-bold">{{ $loop->iteration }}.
+                                                    <span class="text-md">{{ $loop->iteration }}.
                                                         {{ $item->question_text }}</span>
-                                                    <ol type="a" class="my-2">
+                                                    <ol type="a" class="my-2 ml-8">
                                                         @foreach ($item->answers as $answer)
-                                                            <li
-                                                                class="{{ $answer->is_correct ? 'text-blue-500 font-bold' : 'font-bold text-red-500' }}">
+                                                            <li class="{{ $answer->is_correct ? 'font-bold' : '' }}">
                                                                 {{ $loop->iteration }}.
                                                                 {{ $answer->answer_text }}</li>
                                                         @endforeach

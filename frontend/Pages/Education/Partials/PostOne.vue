@@ -1,19 +1,24 @@
 <script setup></script>
 
 <template>
-    <div class="p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
+    <div
+        class="p-0 md:p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
 
-        <div class="p-2 text-left text-xl">
+        <div class="p-2 text-left md:text-xl">
             <span class="font-bold uppercase">KEBERSIHAN DAN KESEHATAN GIGI DAN MULUT</span>
         </div>
+        <div class="flex justify-center gap-2">
+            <img src="/public/educations/Picture1.png" alt="Picture 1">
+        </div>
 
-        <div class="p-2 text-base text-justify leading-loose">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kesehatan gigi dan mulut
+        <div class="p-2 text-sm md:text-base text-justify leading-loose">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kesehatan gigi
+            dan mulut
             pada remaja sangat
             penting,
             karena periode ini adalah saat pertumbuhan gigi permanen dan perubahan hormonal yang bisa mempengaruhi
             kesehatan mulut. Berikut beberapa poin penting tentang kesehatan gigi dan mulut pada remaja:</div>
 
-        <ul class="p-2 text-base leading-loose text-justify list-decimal ml-16">
+        <ul class="p-2 text-sm md:text-base leading-loose text-justify list-decimal ml-16">
             <li>Pentingnya Kebersihan Gigi: Remaja perlu menggosok gigi
                 setidaknya dua kali sehari dan menggunakan benang gigi untuk menghilangkan sisa makanan di antara gigi.
             </li>

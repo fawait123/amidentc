@@ -14,6 +14,14 @@ export default defineConfig({
         }),
         vue(),
     ],
+    optimizeDeps: {
+        include: ['pdfjs-dist'],
+    },
+    build: {
+        commonjsOptions: {
+            include: [/pdfjs-dist/, /node_modules/],
+        },
+    },
     css: {
         postcss: {
             plugins: [tailwind(), autoprefixer()],

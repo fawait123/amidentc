@@ -65,18 +65,13 @@ class QuestionController extends Controller
                     'answer_text' => $request->options[$index]['option_3'],
                     'is_correct' => $request->answer[$index] == "option_3" ? true : false
                 ]);
-
-                Answer::create([
-                    'question_id' => $question->id,
-                    'answer_text' => $request->options[$index]['option_4'],
-                    'is_correct' => $request->answer[$index] == "option_4" ? true : false
-                ]);
             }
 
             DB::commit();
             return Redirect::route('questions.index')
                 ->with('success', 'Question created successfully.');
         } catch (\Throwable $th) {
+            dd($th);
             DB::rollBack();
             return Redirect::route('questions.index')
                 ->with('error', 'Question created failed.');
@@ -135,12 +130,6 @@ class QuestionController extends Controller
                     'question_id' => $question->id,
                     'answer_text' => $request->options[$index]['option_3'],
                     'is_correct' => $request->answer[$index] == "option_3" ? true : false
-                ]);
-
-                Answer::create([
-                    'question_id' => $question->id,
-                    'answer_text' => $request->options[$index]['option_4'],
-                    'is_correct' => $request->answer[$index] == "option_4" ? true : false
                 ]);
             }
 

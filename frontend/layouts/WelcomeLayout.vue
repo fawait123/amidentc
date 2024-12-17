@@ -19,15 +19,11 @@
                     <slot />
                 </transition>
             </div>
-            <div class="flex justify-between mt-20">
+            <div class="flex flex-col gap-2 md:flex-row justify-between mt-20">
                 <h1 class="text-white text-[12px]">BY AMINAH</h1>
                 <div class="flex items-center gap-4">
                     <Globe class="text-white" :size="12" />
                     <span class="text-white text-[12px]">www.amidentc.com</span>
-                </div>
-                <div class="flex items-center gap-4">
-                    <PhoneCall class="text-white" :size="12" />
-                    <span class="text-white text-[12px]">+62 872 7282 2723</span>
                 </div>
             </div>
         </div>

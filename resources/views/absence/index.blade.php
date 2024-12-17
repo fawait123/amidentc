@@ -33,7 +33,7 @@
 
                                             @foreach ($posts as $item)
                                                 <th scope="col"
-                                                    class="text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                                    class="mx-2 w-[225px] text-center text-xs font-semibold uppercase tracking-wide text-gray-500">
                                                     {{ $item }}
                                                 </th>
                                             @endforeach

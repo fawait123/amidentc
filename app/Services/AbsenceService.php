@@ -34,7 +34,11 @@ class AbsenceService
             'makanan yang menyehatkan untuk gigi',
             'makanan yang bisa menyebabkan gigi berlubang',
             'penyakit Gigi dan Mulut',
-            'teknik Mengggosok gigi'
+            'teknik Mengggosok gigi',
+            'Komik Edukasi',
+            'Edukasi kesehatan Gigi dan Mulut',
+            'Cara Menggosok Gigi Berlubang',
+            'Kesehatan Gigi dan Mulut Remaja'
         ];
     }
 }
