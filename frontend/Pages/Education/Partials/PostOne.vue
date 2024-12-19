@@ -3,10 +3,6 @@
 <template>
     <div
         class="p-0 md:p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
-
-        <div class="p-2 text-left md:text-xl">
-            <span class="font-bold uppercase">KEBERSIHAN DAN KESEHATAN GIGI DAN MULUT</span>
-        </div>
         <div class="flex justify-center gap-2">
             <img src="/public/educations/Picture1.png" alt="Picture 1">
         </div>

@@ -4,10 +4,6 @@
     <div
         class="p-0 md:p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
 
-        <div class="p-2 text-sm md:text-xl uppercase">
-            <span class="font-bold uppercase">Penyakit Gigi dan Mulut</span>
-        </div>
-
         <div class="p-2 text-sm md:text-base">
             <span class="font-bold">a.Karies Gigi</span>
         </div>

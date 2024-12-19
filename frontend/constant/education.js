@@ -45,21 +45,21 @@ export const educationData = [
         icon: Banknote
     },
     {
-        title: 'Edukasi kesehatan Gigi dan Mulut',
+        title: 'Video Edukasi kesehatan Gigi dan Mulut',
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,
         src: 'https://www.youtube.com/embed/I-vZjuhEgNw?si=6VK-OjhtRdIW2xkU'
     },
     {
-        title: 'Cara Menggosok Gigi Berlubang',
+        title: 'Video Cara Menggosok Gigi',
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,
         src: 'https://www.youtube.com/embed/p5ByLOXaUPI?si=zi0_Q8Cr0PG2eQ9z'
     },
     {
-        title: 'Kesehatan Gigi dan Mulut Remaja',
+        title: 'Video Kesehatan Gigi dan Mulut Remaja',
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,

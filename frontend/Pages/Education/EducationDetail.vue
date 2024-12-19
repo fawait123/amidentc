@@ -2,7 +2,7 @@
     <div class="flex justify-center items-center flex-col gap-4">
         <CardTitle :title="props.education" @onClick="router.get(route('education'))" />
         <PostCarousel />
-        <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-0 md:p-4 text-justify text-[12px]">
+        <div class="w-full md:min-w-[50%] md:max-w-[50%] bg-white rounded-xl p-1 md:p-4 text-justify text-[12px]">
             <component :is="component" :src="src" />
         </div>
     </div>

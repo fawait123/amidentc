@@ -14,10 +14,12 @@
                             <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Pertanyaan') }}</h1>
                             <p class="mt-2 text-sm text-gray-700">Daftar semua data {{ __('Pertanyaan') }}.</p>
                         </div>
-                        <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                            <a type="button" href="{{ route('questions.create') }}"
-                                class="block rounded-md bg-slate-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600">Tambah</a>
-                        </div>
+                        @if (auth()->user()->email === 'superadmin@gmail.com')
+                            <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                                <a type="button" href="{{ route('questions.create') }}"
+                                    class="block rounded-md bg-slate-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600">Tambah</a>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="flow-root">
@@ -60,13 +62,15 @@
                                                         method="POST">
                                                         <a href="{{ route('questions.show', $question->id) }}"
                                                             class="text-gray-600 font-bold hover:text-gray-900 mr-2">{{ __('Detail') }}</a>
-                                                        <a href="{{ route('questions.edit', $question->id) }}"
-                                                            class="text-slate-600 font-bold hover:text-slate-900  mr-2">{{ __('Ubah') }}</a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <a href="{{ route('questions.destroy', $question->id) }}"
-                                                            class="text-red-600 font-bold hover:text-red-900"
-                                                            onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">{{ __('Hapus') }}</a>
+                                                        @if (auth()->user()->email === 'superadmin@gmail.com')
+                                                            <a href="{{ route('questions.edit', $question->id) }}"
+                                                                class="text-slate-600 font-bold hover:text-slate-900  mr-2">{{ __('Ubah') }}</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a href="{{ route('questions.destroy', $question->id) }}"
+                                                                class="text-red-600 font-bold hover:text-red-900"
+                                                                onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">{{ __('Hapus') }}</a>
+                                                        @endif
                                                     </form>
                                                 </td>
                                             </tr>

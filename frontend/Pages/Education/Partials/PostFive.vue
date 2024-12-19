@@ -3,9 +3,6 @@
 <template>
     <div
         class="p-0 md:p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
-        <div class="p-2 text-sm md:text-xl">
-            <span class="font-bold uppercase">Teknik Mengggosok gigi</span>
-        </div>
 
         <div class="p-2 text-sm md:text-base font-bold">a.Menggosok Gigi</div>
 

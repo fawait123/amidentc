@@ -3,9 +3,6 @@
 <template>
     <div
         class="p-0 md:p-10 bg-white shadow-sm rounded-2xl !font-mono text-justify leading-loose w-full md:max-w-[70vw]">
-        <div class="p-2 text-xl uppercase">
-            <span class="font-bold uppercase">Makanan yang bisa menyebabkan gigi berlubang</span>
-        </div>
         <div class="flex justify-center gap-2">
             <img src="/public/educations/Picture7.png" alt="Picture 1">
         </div>
