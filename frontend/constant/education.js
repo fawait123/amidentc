@@ -9,60 +9,60 @@ import { Banknote, BookOpenText, TvMinimalPlay } from "lucide-vue-next";
 
 export const educationData = [
     {
-        title: 'Kebersihan dan kesehatan gigi dan mulut',
+        title: "Kebersihan dan kesehatan gigi dan mulut",
         component: PostOne,
         showCaraousel: true,
-        icon: BookOpenText
+        icon: BookOpenText,
     },
     {
-        title: 'Makanan yang menyehatkan untuk gigi',
+        title: "Makanan yang menyehatkan untuk gigi",
         component: PostTwo,
         showCaraousel: true,
-        icon: BookOpenText
+        icon: BookOpenText,
     },
     {
-        title: 'Makanan yang bisa menyebabkan gigi berlubang',
+        title: "Makanan yang bisa menyebabkan gigi berlubang",
         component: PostThree,
         showCaraousel: true,
-        icon: BookOpenText
+        icon: BookOpenText,
     },
     {
-        title: 'Penyakit Gigi dan Mulut',
+        title: "Penyakit Gigi dan Mulut",
         component: PostFour,
         showCaraousel: true,
-        icon: BookOpenText
+        icon: BookOpenText,
     },
     {
-        title: 'Teknik Mengggosok gigi',
+        title: "Teknik Mengggosok gigi",
         component: PostFive,
         showCaraousel: true,
-        icon: BookOpenText
+        icon: BookOpenText,
     },
     {
-        title: 'Komik Edukasi',
+        title: "Komik Edukasi",
         component: PostKomik,
         showCaraousel: false,
-        icon: Banknote
+        icon: Banknote,
     },
     {
-        title: 'Video Edukasi kesehatan Gigi dan Mulut',
+        title: "Video Edukasi kesehatan Gigi dan Mulut",
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,
-        src: 'https://www.youtube.com/embed/I-vZjuhEgNw?si=6VK-OjhtRdIW2xkU'
+        src: "https://www.youtube.com/embed/I-vZjuhEgNw?si=6VK-OjhtRdIW2xkU",
     },
     {
-        title: 'Video Cara Menggosok Gigi',
+        title: "Video Cara Menggosok Gigi",
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,
-        src: 'https://www.youtube.com/embed/p5ByLOXaUPI?si=zi0_Q8Cr0PG2eQ9z'
+        src: "https://www.youtube.com/embed/p5ByLOXaUPI?si=zi0_Q8Cr0PG2eQ9z",
     },
     {
-        title: 'Video Kesehatan Gigi dan Mulut Remaja',
+        title: "Video Kesehatan Gigi dan Mulut Remaja",
         component: PostYoutube,
         showCaraousel: false,
         icon: TvMinimalPlay,
-        src: 'https://www.youtube.com/embed/lKEdugiW6us?si=tfO0ehupI_L-EbY6'
+        src: "https://www.youtube.com/embed/lKEdugiW6us?si=tfO0ehupI_L-EbY6",
     },
 ];
