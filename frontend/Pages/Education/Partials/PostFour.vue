@@ -7,6 +7,12 @@
         <div class="p-2 text-sm md:text-base">
             <span class="font-bold">a.Karies Gigi</span>
         </div>
+        <div class="flex justify-center gap-2">
+            <img src="/public/educations/Picture15.png" alt="Picture 1">
+        </div>
+        <div class="flex justify-center gap-2 my-2">
+            <img src="/public/educations/Picture16.png" alt="Picture 1">
+        </div>
 
         <div class="p-2 text-sm md:text-base leading-loose text-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Karies gigi atau
             sering
