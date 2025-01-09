@@ -36,9 +36,9 @@ class AbsenceService
             'penyakit Gigi dan Mulut',
             'teknik Mengggosok gigi',
             'Komik Edukasi',
-            'Edukasi kesehatan Gigi dan Mulut',
-            'Cara Menggosok Gigi Berlubang',
-            'Kesehatan Gigi dan Mulut Remaja'
+            'Video Edukasi kesehatan Gigi dan Mulut',
+            'Video Cara Menggosok Gigi',
+            'Video Kesehatan Gigi dan Mulut Remaja'
         ];
     }
 }
