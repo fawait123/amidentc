@@ -14,7 +14,9 @@
                             <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Absensi') }}</h1>
                             <p class="mt-2 text-sm text-gray-700">Rekap absensi di ambil setiap hari. Rekap absensi
                                 dibawah ini merupakan hasil rekap tanggal <span
-                                    class="font-bold text-blue-500">{{ date('d M Y') }}</span></p>
+                                    class="font-bold text-blue-500">{{ date('d M Y', strtotime($date)) }}</span></p>
+                            <input type="date" class="my-4" value="{{ $date }}" max="{{ date('Y-m-d') }}"
+                                onchange="handleChangeDate(event)">
                         </div>
                     </div>
 
@@ -72,4 +74,14 @@
             </div>
         </div>
     </div>
+
+
+    @push('customjs')
+        <script>
+            function handleChangeDate(e) {
+                const currentUrl = window.location.protocol + '//' + window.location.host + window.location.pathname
+                window.location.href = `${currentUrl}?date=${e.target.value}`
+            }
+        </script>
+    @endpush
 </x-app-layout>

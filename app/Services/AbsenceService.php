@@ -11,7 +11,7 @@ class AbsenceService
         protected Participant $participant
     ) {}
 
-    public function data()
+    public function data($date)
     {
         $query =  $this->participant->query();
 
@@ -19,7 +19,7 @@ class AbsenceService
 
         foreach ($this->posts() as $value) {
             $as = join(explode(' ', $value));
-            $query->selectRaw('(select count(id) from absences where participant_id = participants.id and date = "' . date('Y-m-d') . '" and title= "' . $value . '") as ' . $as . '');
+            $query->selectRaw('(select count(id) from absences where participant_id = participants.id and date = "' . $date . '" and title= "' . $value . '") as ' . $as . '');
         }
 
         // dd($query->toSql());
