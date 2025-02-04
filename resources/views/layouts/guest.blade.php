@@ -21,7 +21,7 @@
         <div>
             <a href="/" class="flex justify-center items-center flex-col gap-2">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                <span class="block text-2xl font-bold text-slate-600">{{ _('Amident') }}</span>
+                <span class="block text-2xl font-bold text-slate-600">{{ _('Amidentc') }}</span>
             </a>
         </div>
 
